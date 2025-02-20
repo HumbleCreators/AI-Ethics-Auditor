@@ -134,7 +134,7 @@ streamlit run app.py  # Launches UI on port 8501
 4. 💬 Join our Discussions for major changes
 
 ## 📞 Support
-- 🐛 Open an issue or email ethics-auditor@yourdomain.com for support
+- 🐛 Open an issue or email humblecreators500@gmail.com for support
 - 💭 Join our community discussions for general questions
 
 ## 📜 License
