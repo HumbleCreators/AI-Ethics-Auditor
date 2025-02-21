@@ -1,12 +1,12 @@
 import pandas as pd
 from io import StringIO
 import numpy as np
+from bias_detector import adversarial_debias
 
 def mitigate_bias(content: bytes):
     """
-    Mitigate bias in a dataset by applying a simple reweighting scheme.
-    Expects a CSV with a 'label' column. For each class, the sample weight is
-    adjusted inversely proportional to its frequency.
+    Mitigate bias in a dataset by applying reweighting and adversarial debiasing.
+    Expects a CSV with a 'label' column.
     """
     try:
         data_str = content.decode("utf-8")
@@ -17,12 +17,14 @@ def mitigate_bias(content: bytes):
     if 'label' not in df.columns:
         return {"error": "Dataset must include a 'label' column for mitigation."}
     
-    # Calculate class frequencies
+    # Simple reweighting based on label frequencies
     counts = df['label'].value_counts().to_dict()
     max_count = max(counts.values())
     df['sample_weight'] = df['label'].apply(lambda x: max_count / counts[x])
     
-    # Optionally, you might want to resample or adjust weights during training.
-    # Here we simply return the dataset with the added sample_weight column.
+    # If a sensitive attribute is available, apply adversarial debiasing simulation
+    if 'sensitive' in df.columns:
+        df = adversarial_debias(df, 'sensitive', 'label')
+    
     mitigated_csv = df.to_csv(index=False)
     return {"mitigated_dataset": mitigated_csv}
