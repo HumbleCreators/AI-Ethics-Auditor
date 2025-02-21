@@ -9,7 +9,7 @@ from mitigations import mitigate_bias
 from privacy import perform_privacy_tests
 from db_manager import store_report
 
-app = FastAPI(title="AI Ethics Auditor Backend", version="1.1")
+app = FastAPI(title="AI Ethics Auditor Backend", version="1.2")
 
 @app.get("/")
 def read_root():
@@ -45,14 +45,21 @@ async def endpoint_analyze_fairness(file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+# Updated privacy endpoint now accepts two files: model and training dataset.
 @app.post("/analyze/privacy")
-async def endpoint_analyze_privacy(file: UploadFile = File(...)):
+async def endpoint_analyze_privacy(
+    model: UploadFile = File(...), 
+    train: UploadFile = File(...)
+):
     """
-    Expects a pickled model file.
+    Expects:
+      - 'model': a pickled model file.
+      - 'train': a CSV file containing the training data.
     """
     try:
-        content = await file.read()
-        result = perform_privacy_tests(content)
+        model_content = await model.read()
+        train_content = await train.read()
+        result = perform_privacy_tests(model_content, train_content)
         return {"privacy_analysis": result}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
