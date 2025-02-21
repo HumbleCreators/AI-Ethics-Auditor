@@ -9,16 +9,16 @@ A Free and Open Source toolkit to detect, explain, and mitigate bias in AI/ML mo
 AI Ethics Auditor is a standalone tool that analyzes AI models and datasets for hidden biases, generates explainability reports, and suggests mitigations. This MVP is designed as a local web application, with a modular architecture to later integrate as a plugin for Jupyter, VS Code, or ML platforms like Hugging Face.
 
 **🌟 Key Principles**:
-- 🔒 **Privacy-First**: All processing is done locally (no external APIs)
-- 🌐 **FOSS Compliance**: Uses open-source libraries and ships with Apache 2.0 license
-- 👩‍💻 **Developer-Centric**: Designed for seamless integration into existing ML workflows
+-  **🔒Privacy-First**: All processing is done locally (no external APIs)
+-  **🌐FOSS Compliance**: Uses open-source libraries and ships with Apache 2.0 license
+-  **👩‍💻Developer-Centric**: Designed for seamless integration into existing ML workflows
 
 ## 1️⃣ Ethical AI Principles & Predefined Criteria
 We are using established AI ethics guidelines from:
-- 🔹 **EU AI Act**
-- 🔹 **OECD AI Principles**
-- 🔹 **Fairness Indicators by Google**
-- 🔹 **IBM AI Fairness 360 Toolkit**
+-  **EU AI Act**
+-  **OECD AI Principles**
+-  **Fairness Indicators by Google**
+-  **IBM AI Fairness 360 Toolkit**
 
 ## ⚡ Key Features
 
