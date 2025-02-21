@@ -13,6 +13,13 @@ AI Ethics Auditor is a standalone tool that analyzes AI models and datasets for 
 - 🌐 **FOSS Compliance**: Uses open-source libraries and ships with Apache 2.0 license
 - 👩‍💻 **Developer-Centric**: Designed for seamless integration into existing ML workflows
 
+## 1️⃣ Ethical AI Principles & Predefined Criteria
+We are using established AI ethics guidelines from:
+🔹 **EU AI Act**
+🔹 **OECD AI Principles**
+🔹 **Fairness Indicators by Google**
+🔹 **IBM AI Fairness 360 Toolkit**
+
 ## ⚡ Key Features
 
 ### 🎯 Bias Detection Engine
@@ -143,3 +150,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE)
 ---
 
 ✨ Empower ethical AI – one audit at a time! 🔍
+
