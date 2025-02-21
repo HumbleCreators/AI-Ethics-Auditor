@@ -4,7 +4,7 @@ from explainability import generate_explanation
 from mitigations import mitigate_bias
 from db_manager import store_report
 
-app = FastAPI(title="AI Ethics Auditor Backend")
+app = FastAPI(title="AI Ethics Auditor Backend", version="1.0")
 
 @app.get("/")
 def read_root():
@@ -42,6 +42,7 @@ async def mitigate(file: UploadFile = File(...)):
     try:
         content = await file.read()
         mitigated_data = mitigate_bias(content)
+        # Optionally, store the report for future reference.
         store_report(mitigated_data)
         return {"mitigated_data": mitigated_data}
     except Exception as e:
