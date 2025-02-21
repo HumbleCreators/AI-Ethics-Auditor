@@ -129,16 +129,16 @@ streamlit run app.py  # Launches UI on port 8501
 - 🔧 Backend: Python, FastAPI, Fairlearn, SHAP, SQLite
 - 🎨 Frontend: Streamlit, Plotly, D3.js
 
-## 🗺️ Future Roadmap
-1. 🔌 VS Code extension for in-IDE bias checking
-2. 🔤 NLP bias detection (Hugging Face integration)
-3. 📑 Automated compliance reporting (PDF/LaTeX)
+##  Future Roadmap🗺️
+1. 🔌 VS Code extension for in-IDE bias checking🔌
+2.  NLP bias detection (Hugging Face integration)🔤
+3.  Automated compliance reporting (PDF/LaTeX)📑
 
 ## 🤝 Contributing
-1. 🔀 Fork the repository
-2. 🌿 Create a feature branch (feature/your-feature)
-3. 📝 Submit a PR with tests and documentation
-4. 💬 Join our Discussions for major changes
+1.  Fork the repository🔀
+2.  Create a feature branch (feature/your-feature)🌿
+3.  Submit a PR with tests and documentation📝
+4.  Join our Discussions for major changes💬
 
 ## 📞 Support
 - 🐛 Open an issue or email humblecreators500@gmail.com for support
