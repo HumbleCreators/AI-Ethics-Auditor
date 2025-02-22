@@ -40,7 +40,7 @@ We use established AI ethics guidelines from:
 - Core logic decoupled from UI for future plugin development.
 - Configurable fairness thresholds via YAML files.
 
-## Codebase Directory Structure
+## Codebase Directory Structure📂
 
 ```
 ai-ethics-auditor/
