@@ -1,41 +1,47 @@
-# AI Ethics Auditor 🔍
+# AI Ethics Auditor🔍
 
-A Free and Open Source toolkit to detect, explain, and mitigate bias in AI/ML models and datasets. Built for developers and researchers committed to ethical AI practices.
+A free and open source toolkit to detect, explain, and mitigate bias in AI/ML models and datasets. Built for developers and researchers committed to ethical AI practices.
 
 [Demo Screenshot placeholder]
 
 ## Overview
 
-AI Ethics Auditor is a standalone tool that analyzes AI models and datasets for hidden biases, generates explainability reports, and suggests mitigations. This MVP is designed as a local web application, with a modular architecture to later integrate as a plugin for Jupyter, VS Code, or ML platforms like Hugging Face.
+AI Ethics Auditor is a standalone tool that analyzes AI models and datasets for hidden biases, generates explainability reports, and suggests mitigations. This MVP is designed as a local web application with a modular architecture that can later integrate as a plugin for Jupyter, VS Code, or ML platforms like Hugging Face.
 
-**Key Principles**:
-- **Privacy-First**: All processing is done locally (no external APIs)
-- **FOSS Compliance**: Uses open-source libraries and is released under the MIT License
-- **Developer-Centric**: Designed for seamless integration into existing ML workflows
+**Key Principles:**
+- **Privacy-First:** All processing is done locally (no external APIs).
+- **FOSS Compliance:** Uses open-source libraries and ships under the MIT License.
+- **Developer-Centric:** Designed for seamless integration into existing ML workflows.
 
 ## Ethical AI Principles & Predefined Criteria
-We are guided by established AI ethics frameworks, including the EU AI Act, OECD AI Principles, Fairness Indicators by Google, and IBM AI Fairness 360 Toolkit.
+
+We use established AI ethics guidelines from:
+- EU AI Act
+- OECD AI Principles
+- Fairness Indicators by Google
+- IBM AI Fairness 360 Toolkit
 
 ## Key Features
 
 ### Bias Detection Engine
-- Analyze datasets for class imbalances (e.g., gender, race)
-- Evaluate models for fairness metrics (demographic parity, equal opportunity)
-- Support for tabular data (CSV) and common ML frameworks (PyTorch, TensorFlow)
+- Analyze datasets for class imbalances (e.g., gender, race).
+- Evaluate models for fairness metrics (e.g., demographic parity, equal opportunity).
+- Support for tabular data (CSV) and common ML frameworks (PyTorch, TensorFlow).
 
 ### Explainability & Transparency
-- Generate SHAP/LIME explanations for model predictions
-- Visualize bias scores and fairness trade-offs with interactive charts
+- Generate SHAP/LIME explanations for model predictions.
+- Visualize bias scores and fairness trade-offs with interactive charts.
 
 ### Mitigation Toolkit
-- Suggest reweighting strategies for biased datasets
-- Recommend fairness-aware algorithms (e.g., adversarial debiasing)
+- Suggest reweighting strategies for biased datasets.
+- Recommend fairness-aware algorithms (e.g., adversarial debiasing).
 
 ### Modular & Extensible
-- Core logic decoupled from UI for future plugin development
-- Configurable fairness thresholds via YAML files
+- Core logic decoupled from UI for future plugin development.
+- Configurable fairness thresholds via YAML files.
 
 ## Codebase Directory Structure
+
 ```
 ai-ethics-auditor/
 │
@@ -62,8 +68,8 @@ ai-ethics-auditor/
 │   ├── src/
 │   │   ├── app.py
 │   │   ├── components/
-│   │       ├── metric_card.py
-│   │       └── dataset_upload.py
+│   │   │   ├── metric_card.py
+│   │   │   └── dataset_upload.py
 │   │   └── pages/
 │   │       ├── analyze.py
 │   │       └── reports.py
@@ -83,20 +89,20 @@ ai-ethics-auditor/
 - Git
 
 ### Steps
-1. **Clone the Repository**:
+1. **Clone the Repository:**
    ```bash
    git clone https://github.com/yourusername/ai-ethics-auditor
    cd ai-ethics-auditor
    ```
 
-2. **Setup Backend**:
+2. **Setup Backend:**
    ```bash
    cd backend
    pip install -r requirements.txt
    uvicorn main:app --reload  # Starts FastAPI server on port 8000
    ```
 
-3. **Setup Frontend**:
+3. **Setup Frontend:**
    ```bash
    cd ../frontend
    streamlit run app.py  # Launches UI on port 8501
@@ -110,27 +116,27 @@ ai-ethics-auditor/
 3. View fairness metrics and bias scores.
 
 ### Audit a Model
-1. Load a pretrained model (e.g., PyTorch or TensorFlow).
+1. Load a pretrained model (PyTorch/TensorFlow).
 2. Run predictions on test data.
 3. Generate SHAP explanations for flagged biases.
 
 ### Mitigate & Export
-1. Apply reweighting/resampling strategies.
+1. Apply reweighting/resampling.
 2. Download the debiased dataset or model.
 3. Save a PDF report for compliance.
 
 ## Tech Stack
-- **Backend**: Python, FastAPI, Fairlearn, SHAP, SQLite
-- **Frontend**: Streamlit, Plotly, D3.js
+- **Backend:** Python, FastAPI, Fairlearn, SHAP, SQLite.
+- **Frontend:** Streamlit, Plotly, D3.js.
 
 ## Future Roadmap
-1. VS Code extension for in-IDE bias checking
-2. NLP bias detection (Hugging Face integration)
-3. Automated compliance reporting (PDF/LaTeX)
+1. VS Code extension for in-IDE bias checking.
+2. NLP bias detection (Hugging Face integration).
+3. Automated compliance reporting (PDF/LaTeX).
 
 ## Contributing
 1. Fork the repository.
-2. Create a feature branch (e.g., `feature/your-feature`).
+2. Create a feature branch (e.g., feature/your-feature).
 3. Submit a PR with tests and documentation.
 4. Join our discussions for major changes.
 
@@ -140,5 +146,7 @@ ai-ethics-auditor/
 
 ## License
 This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
+
+---
 
 Empower ethical AI – one audit at a time!
