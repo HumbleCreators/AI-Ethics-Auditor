@@ -2,25 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Ethics Auditor Frontend</title>
-  <!-- Link to external CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Ethics Auditor</title>
   <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>AI Ethics Auditor</h1>
-    <p>Welcome to the AI Ethics Auditor frontend demo!</p>
-  </header>
-  
-  <!-- Container where visualizations or interactive content will be rendered -->
-  <main>
-    <div id="visualization-container">
-      <!-- Visualization content will be injected here -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-robot"></i>
+      <span>AI Ethics Auditor</span>
     </div>
+    <nav>
+      <a href="#dataset-section" class="nav-item active">
+        <i class="fas fa-database"></i>
+        <span>Dataset Analysis</span>
+      </a>
+      <a href="#model-section" class="nav-item">
+        <i class="fas fa-brain"></i>
+        <span>Model Audit</span>
+      </a>
+    </nav>
+  </div>
+
+  <main class="main-content">
+    <div class="top-bar">
+      <h1>Dashboard</h1>
+      <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span>Admin User</span>
+      </div>
+    </div>
+
+    <section id="dataset-section" class="content-section">
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-database"></i> Dataset Analysis</h2>
+        </div>
+        <div class="card-body">
+          <form id="dataset-form" class="upload-form">
+            <div class="file-upload">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <label for="dataset-file">Upload CSV File</label>
+              <input type="file" id="dataset-file" name="file" required>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-analytics"></i>
+              Analyze Dataset
+            </button>
+          </form>
+          
+          <div id="dataset-result" class="result-container" style="display:none;">
+            <h3>Dataset Analysis</h3>
+            <div class="result-grid">
+              <div class="result-card">
+                <pre id="dataset-json"></pre>
+              </div>
+              <div class="result-card">
+                <div id="dataset-chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="model-section" class="content-section">
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-brain"></i> Model Audit</h2>
+        </div>
+        <div class="card-body">
+          <form id="model-form" class="upload-form">
+            <div class="file-upload-group">
+              <div class="file-upload">
+                <i class="fas fa-file-code"></i>
+                <label for="model-file">Upload Model File</label>
+                <input type="file" id="model-file" name="model" required>
+              </div>
+              <div class="file-upload">
+                <i class="fas fa-table"></i>
+                <label for="training-file">Upload Training Data</label>
+                <input type="file" id="training-file" name="train" required>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-microscope"></i>
+              Audit Model
+            </button>
+          </form>
+          
+          <div id="model-result" class="result-container" style="display:none;">
+            <div class="result-grid">
+              <div class="result-card">
+                <h3><i class="fas fa-chart-bar"></i> Model Analysis</h3>
+                <pre id="model-json"></pre>
+              </div>
+              <div class="result-card">
+                <h3><i class="fas fa-table"></i> Confusion Matrix</h3>
+                <div id="confusion-matrix-chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  
-  <!-- Link to external JavaScript -->
+
   <script src="assets/viz.js"></script>
 </body>
 </html>
