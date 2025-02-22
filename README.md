@@ -61,8 +61,8 @@ ai-ethics-auditor/
 │ ├── public/
 │ │ ├── index.html
 │ │ └── assets/
-│ │ ├── styles.css
-│ │ └── viz.js
+│ │   ├── styles.css
+│ │   └── viz.js
 │ │
 │ ├── src/
 │ │ ├── app.py
