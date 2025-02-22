@@ -78,7 +78,7 @@ ai-ethics-auditor/
 │
 ├── .gitignore
 ├── LICENSE
-└── setup.sh
+└── setup.py
 ```
 
 ## 🚀 Installation & Setup
