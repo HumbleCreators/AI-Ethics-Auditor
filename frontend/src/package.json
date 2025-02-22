@@ -1,0 +1,20 @@
+{
+    "name": "ai-ethics-auditor-frontend",
+    "version": "1.0.0",
+    "description": "Frontend for the AI Ethics Auditor project",
+    "main": "index.js",
+    "scripts": {
+      "start": "live-server ../public",
+      "build": "echo \"No build process defined.\""
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "d3": "^7.8.5",
+      "plotly.js": "^2.25.2"
+    },
+    "devDependencies": {
+      "live-server": "^1.2.2"
+    }
+  }
+  
