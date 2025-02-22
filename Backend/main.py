@@ -1,15 +1,15 @@
 import logging
 from fastapi import FastAPI, UploadFile, File, HTTPException, Depends, Header
 from fastapi.responses import JSONResponse
-from bias_detector import (
+from .bias_detector import (
     analyze_dataset_bias,
     analyze_model_bias,
     compute_fairness_metrics
 )
-from explainability import generate_shap_explanation, generate_lime_explanation
-from mitigations import mitigate_bias
-from privacy import perform_privacy_tests
-from db_manager import store_report
+from .explainability import generate_shap_explanation, generate_lime_explanation
+from .mitigations import mitigate_bias
+from .privacy import perform_privacy_tests
+from .db_manager import store_report
 import pandas as pd
 from io import StringIO
 
@@ -19,7 +19,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[logging.StreamHandler()]
 )
-logger = logging.getLogger(_name_)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="AI Ethics Auditor Backend", version="1.3")
 
