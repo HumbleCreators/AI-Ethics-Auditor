@@ -40,11 +40,14 @@ def analyze_model_bias(content: bytes):
     runs it on the Iris dataset, and computes a confusion matrix.
     """
     import joblib
+    import io
     from sklearn.datasets import load_iris
     from sklearn.model_selection import train_test_split
     
     try:
-        model = joblib.loads(content)
+        # Use BytesIO to load the model from bytes
+        bytes_buffer = io.BytesIO(content)
+        model = joblib.load(bytes_buffer)
     except Exception as e:
         return {"error": f"Failed to load model: {str(e)}"}
     
@@ -72,7 +75,8 @@ def compute_fairness_metrics(content: bytes):
     Compute fairness metrics using fairlearn's MetricFrame.
     Expects a CSV with columns 'label', 'prediction', and 'sensitive'.
     """
-    from fairlearn.metrics import MetricFrame, accuracy_score
+    from fairlearn.metrics import MetricFrame
+    from sklearn.metrics import accuracy_score  # Updated: import accuracy_score from sklearn.metrics
     try:
         data_str = content.decode("utf-8")
         df = pd.read_csv(StringIO(data_str))
