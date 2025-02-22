@@ -20,7 +20,7 @@ def evaluate_differential_privacy(noise_multiplier=1.1, batch_size=64, dataset_s
 
 def perform_privacy_tests(model_content: bytes, train_content: bytes):
     """
-    Improved privacy test that performs a basic membership inference attack and
+    The privacy test that performs a basic membership inference attack and
     estimates differential privacy parameters.
     
     Expects:

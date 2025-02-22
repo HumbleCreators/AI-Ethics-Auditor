@@ -25,5 +25,5 @@ def store_report(report_data):
     conn.commit()
     conn.close()
 
-# Ensure the reports table exists when the module is imported.
+# Ensures the reports table exists when the module is imported.
 create_table()

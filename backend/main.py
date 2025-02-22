@@ -93,7 +93,7 @@ async def endpoint_analyze_fairness(file: UploadFile = File(...)):
         logger.error("Error in /analyze/fairness: %s", str(e))
         raise HTTPException(status_code=400, detail=consistent_response(False, error=str(e)))
 
-# Updated privacy endpoint now accepts two files: model and training dataset.
+# The privacy endpoints accepts two files: model and training dataset.
 @app.post("/analyze/privacy", dependencies=[Depends(verify_api_key)])
 async def endpoint_analyze_privacy(
     model: UploadFile = File(...), 

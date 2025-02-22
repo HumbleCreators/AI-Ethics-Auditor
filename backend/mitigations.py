@@ -1,7 +1,7 @@
 import pandas as pd
 from io import StringIO
 import numpy as np
-from bias_detector import adversarial_debias
+from .bias_detector import adversarial_debias
 
 def mitigate_bias(content: bytes):
     """
@@ -22,7 +22,7 @@ def mitigate_bias(content: bytes):
     max_count = max(counts.values())
     df['sample_weight'] = df['label'].apply(lambda x: max_count / counts[x])
     
-    # If a sensitive attribute is available, apply adversarial debiasing simulation
+    # Applying adversarial debiasing simulation if a sensitive attribute is available
     if 'sensitive' in df.columns:
         df = adversarial_debias(df, 'sensitive', 'label')
     
