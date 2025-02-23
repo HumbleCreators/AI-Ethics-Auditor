@@ -57,7 +57,7 @@ async def endpoint_analyze_dataset(file: UploadFile = File(...)):
         return consistent_response(True, data={"bias_analysis": result})
     except Exception as e:
         logger.error("Error in /analyze/dataset: %s", str(e))
-        raise HTTPException(status_code=400, detail=consistent_response(False, error=str(e)))
+        raise HTTPException(status_code=400, detail=consistent_response(False, error="An error occurred while analyzing the dataset. Please try again later."))
 
 @app.post("/analyze/model", dependencies=[Depends(verify_api_key)])
 async def endpoint_analyze_model(file: UploadFile = File(...)):
@@ -70,7 +70,7 @@ async def endpoint_analyze_model(file: UploadFile = File(...)):
         return consistent_response(True, data={"model_bias": result})
     except Exception as e:
         logger.error("Error in /analyze/model: %s", str(e))
-        raise HTTPException(status_code=400, detail=consistent_response(False, error=str(e)))
+        raise HTTPException(status_code=400, detail=consistent_response(False, error="An error occurred while analyzing the model. Please try again later."))
 
 @app.post("/analyze/fairness", dependencies=[Depends(verify_api_key)])
 async def endpoint_analyze_fairness(file: UploadFile = File(...)):
