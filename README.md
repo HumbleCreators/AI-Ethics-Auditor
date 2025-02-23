@@ -65,11 +65,11 @@ ai-ethics-auditor/
 │   │   └── assets/
 │   │       ├── styles.css    # CSS styling
 │   │       ├── viz.js        # Data visualization
-│   │       ├── main.js       # API handling & UI updates
+│   │       └── main.js       # API handling & UI updates
 │   ├── src/
 │   │   ├── pages/
 │   │   │   ├── analyze.html  # Analysis page UI
-│   │   │   ├── reports.html  # Reports page UI
+│   │   │   └── reports.html  # Reports page UI
 │   │   ├── components/
 │   │   │   ├── DatasetAnalyzer.py
 │   │   │   ├── ModelAuditor.py
