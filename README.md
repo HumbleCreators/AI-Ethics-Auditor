@@ -75,7 +75,7 @@ ai-ethics-auditor/
 │   │   │   ├── ModelAuditor.py
 │   │   │   ├── FairnessMetrics.py
 │   │   │   └── PrivacyTester.py
-│   │   ├── utils/
+│   │   └── utils/
 │   │       ├── api_client.py
 │   │       └── visualizations.py
 │   ├── package.json
