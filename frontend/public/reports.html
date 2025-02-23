@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis Dashboard - AI Ethics Auditor</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-robot"></i>
+      <span>AI Ethics Auditor</span>
+    </div>
+    <nav>
+      <a href="../index.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="analyze.html" class="nav-item active">
+        <i class="fas fa-microscope"></i>
+        <span>Analysis</span>
+      </a>
+      <a href="reports.html" class="nav-item">
+        <i class="fas fa-file-alt"></i>
+        <span>Reports</span>
+      </a>
+    </nav>
+  </div>
+
+  <main class="main-content">
+    <div class="top-bar">
+      <h1>Analysis Dashboard</h1>
+      <div class="analysis-controls">
+        <select id="analysis-type" class="select-control">
+          <option value="dataset">Dataset Analysis</option>
+          <option value="model">Model Analysis</option>
+          <option value="fairness">Fairness Analysis</option>
+          <option value="privacy">Privacy Analysis</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="analysis-grid">
+      <!-- Quick Stats -->
+      <div class="card stat-card">
+        <div class="card-body">
+          <h3><i class="fas fa-chart-line"></i> Analysis Summary</h3>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">Bias Score</span>
+              <span class="stat-value" id="bias-score">0.82</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Fairness Index</span>
+              <span class="stat-value" id="fairness-index">0.91</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Privacy Rating</span>
+              <span class="stat-value" id="privacy-rating">A+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analysis Form -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-upload"></i> Upload for Analysis</h2>
+        </div>
+        <div class="card-body">
+          <form id="analysis-form" class="upload-form">
+            <div class="file-upload-group">
+              <div class="file-upload">
+                <i class="fas fa-file-csv"></i>
+                <label for="dataset-file">Upload Dataset</label>
+                <input type="file" id="dataset-file" accept=".csv" required>
+                <span class="file-hint">CSV format required</span>
+              </div>
+              <div class="file-upload" id="model-upload" style="display: none;">
+                <i class="fas fa-brain"></i>
+                <label for="model-file">Upload Model</label>
+                <input type="file" id="model-file" accept=".pkl,.h5" required>
+                <span class="file-hint">PKL or H5 format</span>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-play"></i>
+              Run Analysis
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="card" id="results-section" style="display: none;">
+        <div class="card-header">
+          <h2><i class="fas fa-chart-bar"></i> Analysis Results</h2>
+        </div>
+        <div class="card-body">
+          <div class="results-grid">
+            <div class="result-card">
+              <h3>Metrics Overview</h3>
+              <div id="metrics-chart"></div>
+            </div>
+            <div class="result-card">
+              <h3>Detailed Breakdown</h3>
+              <div id="details-table"></div>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-secondary" onclick="generateReport()">
+              <i class="fas fa-file-export"></i>
+              Generate Report
+            </button>
+            <button class="btn-secondary" onclick="downloadResults()">
+              <i class="fas fa-download"></i>
+              Download Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/viz.js"></script>
+  <script src="../assets/analysis.js"></script>
+</body>
+</html>
