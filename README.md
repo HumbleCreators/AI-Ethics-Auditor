@@ -61,7 +61,9 @@ ai-ethics-auditor/
 │
 ├── frontend/
 │   ├── public/
-│   │   ├── index.html        # Main UI (Dashboard)
+│   │   ├── index.html         # Main UI (Dashboard)
+|   |   ├──analyze.html
+|   |   ├──reports.html        
 │   │   └── assets/
 │   │       ├── styles.css    # CSS styling
 │   │       ├── viz.js        # Data visualization
