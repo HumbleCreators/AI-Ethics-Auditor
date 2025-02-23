@@ -144,9 +144,12 @@ async def endpoint_explain_lime(file: UploadFile = File(...)):
         explanation = generate_lime_explanation(content)
         logger.info("LIME explanation generated successfully.")
         return consistent_response(True, data={"lime_explanation": explanation})
-    except Exception as e:
+    except RuntimeError as e:
         logger.error("Error in /explain/lime: %s", str(e))
         raise HTTPException(status_code=400, detail=consistent_response(False, error="An internal error has occurred. Please try again later."))
+    except Exception as e:
+        logger.error("Unexpected error in /explain/lime: %s", str(e))
+        raise HTTPException(status_code=500, detail=consistent_response(False, error="An unexpected error has occurred. Please try again later."))
 
 @app.post("/mitigate", dependencies=[Depends(verify_api_key)])
 async def endpoint_mitigate(file: UploadFile = File(...)):

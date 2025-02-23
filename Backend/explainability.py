@@ -38,7 +38,7 @@ def generate_lime_explanation(content: bytes):
     try:
         model = joblib.loads(content)
     except Exception as e:
-        return {"error": f"Failed to load model for LIME explanation: {str(e)}"}
+        raise RuntimeError("Failed to load model for LIME explanation") from e
     
     lime_explanation = {
         "feature_importance": {"feature1": 0.5, "feature2": -0.3},
