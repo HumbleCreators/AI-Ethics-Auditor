@@ -77,12 +77,13 @@ ai-ethics-auditor/
 │   │   └── utils/
 │   │       ├── api_client.py
 │   │       └── visualizations.py
-│   ├── package.json
-│   └── README.md
+│   └──package.json
+│   
 │
 ├── .gitignore
 ├── LICENSE
-└── setup.py
+├── setup.py
+└── README.md
 ```
 
 ## Installation & Setup
