@@ -61,18 +61,23 @@ ai-ethics-auditor/
 │
 ├── frontend/
 │   ├── public/
-│   │   ├── index.html
+│   │   ├── index.html        # Main UI (Dashboard)
 │   │   └── assets/
-│   │       ├── styles.css
-│   │       └── viz.js
+│   │       ├── styles.css    # CSS styling
+│   │       ├── viz.js        # Data visualization
+│   │       ├── main.js       # API handling & UI updates
 │   ├── src/
-│   │   ├── app.py
+│   │   ├── pages/
+│   │   │   ├── analyze.html  # Analysis page UI
+│   │   │   ├── reports.html  # Reports page UI
 │   │   ├── components/
-│   │   │   ├── metric_card.py
-│   │   │   └── dataset_upload.py
-│   │   └── pages/
-│   │       ├── analyze.py
-│   │       └── reports.py
+│   │   │   ├── DatasetAnalyzer.py
+│   │   │   ├── ModelAuditor.py
+│   │   │   ├── FairnessMetrics.py
+│   │   │   └── PrivacyTester.py
+│   │   ├── utils/
+│   │       ├── api_client.py
+│   │       └── visualizations.py
 │   ├── package.json
 │   └── README.md
 │
